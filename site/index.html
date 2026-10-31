@@ -464,7 +464,7 @@ body.quake #app{animation:quake .5s linear 2}
 .tile{border-width:9px;border-image:var(--fr-btn) 4;box-shadow:none!important}
 .tile:hover{border-image:var(--fr-btnon) 4;animation:none}
 .fav{border-width:12px;border-image:var(--fr-panel) 4;box-shadow:6px 6px 0 rgba(0,0,0,.35)!important}
-.fav.t-dmc,.fav.t-p4{border-image:var(--fr-red) 4}.fav.t-ff9,.fav.t-gow,.fav.t-yoshi{border-image:var(--fr-gold) 4}
+.fav.t-dmc,.fav.t-p4,.fav.t-lod{border-image:var(--fr-red) 4}.fav.t-dino{border-image:var(--fr-soft) 4}.fav.t-tlou{border-image:var(--fr-gold) 4}.fav.t-ff9,.fav.t-gow,.fav.t-yoshi{border-image:var(--fr-gold) 4}
 .realms,.stage-wrap,.tvroom{border-width:12px;border-image:var(--fr-panel) 4;box-shadow:6px 6px 0 rgba(0,0,0,.35)!important}
 .tvroom{border-image:var(--fr-gold) 4}
 .sc-body .card{border-width:6px;border-image:var(--fr-btn) 4;box-shadow:4px 4px 0 rgba(0,0,0,.4)!important}
@@ -505,6 +505,33 @@ body.reading #srccode,body.intro #srccode{opacity:0;pointer-events:none}
 @media (min-width:901px){#travel{bottom:26px}#srccode{bottom:7px}#scroll{bottom:110px}#diary{bottom:26px}#diaryOpen{bottom:26px}}
 .portrait{border:0!important;box-shadow:none!important;clip-path:none!important;background-color:transparent!important;background-size:contain!important;filter:drop-shadow(4px 4px 0 rgba(0,0,0,.35))}
 .tile.center{background-color:#0b0f2a!important;background-size:88%!important;background-repeat:no-repeat!important;background-position:center 40%!important}
+#scBack{flex:none;font-family:var(--pixel);font-size:9px;color:#fff;padding:10px 12px;cursor:pointer;border-style:solid;border-width:6px;border-image:var(--fr-btn) 4 fill;background:transparent;image-rendering:pixelated}
+#scBack:hover{border-image:var(--fr-btnon) 4 fill;color:#1a1200}
+#scBack[hidden]{display:none}
+@media (max-width:900px){#scBack span{display:none}#scBack{font-size:14px;padding:6px 10px}}
+
+.t-lod{background:radial-gradient(circle at 85% 80%,#ff2a4d33,transparent 45%),linear-gradient(180deg,#2a0610,#0c0206);color:#f2e6d8;font-family:var(--serif)}
+.t-lod h3{color:#f5cd52;letter-spacing:.06em;text-shadow:2px 2px 0 #000,0 0 10px #c8283f}
+.t-lod ul,.t-lod .times{font-family:var(--vt)}
+.t-lod .gem{position:absolute;right:22px;bottom:22px;width:46px;height:46px;transform:rotate(45deg);background:linear-gradient(135deg,#ffb0bc,#e3263f 45%,#5a0010);box-shadow:0 0 0 3px #f5cd52,0 0 0 6px #2a0610,0 0 24px #ff2a4d;animation:gem 2.4s ease-in-out infinite}
+.t-lod .gem i{position:absolute;left:8px;top:8px;width:10px;height:10px;background:#fff;opacity:.8}
+@keyframes gem{50%{box-shadow:0 0 0 3px #f5cd52,0 0 0 6px #2a0610,0 0 40px #ff2a4d,0 0 70px #ff2a4d88}}
+.t-dino{background:repeating-linear-gradient(-45deg,#0e2414 0 18px,#11301a 18px 36px);color:#d9f2d0;font-family:var(--vt)}
+.t-dino h3{font-family:var(--pixel);font-size:15px;color:#7cff6b;text-shadow:3px 3px 0 #000;line-height:1.4}
+.t-dino .claw{position:absolute;right:30px;top:40px;width:70px;height:90px;transform:rotate(18deg)}
+.t-dino .claw i{position:absolute;top:0;width:7px;height:100%;background:linear-gradient(180deg,transparent,#ff2a4d 20%,#7a0b1c 80%,transparent);animation:claw 3s steps(3) infinite}
+.t-dino .claw i:nth-child(1){left:0}.t-dino .claw i:nth-child(2){left:24px;animation-delay:.1s}.t-dino .claw i:nth-child(3){left:48px;animation-delay:.2s}
+@keyframes claw{0%,70%{clip-path:inset(0 0 100% 0)}80%,100%{clip-path:inset(0 0 0 0)}}
+.t-dino .danger{position:absolute;right:16px;bottom:14px;font-family:var(--pixel);font-size:10px;color:#1a1200;background:#f5cd52;padding:5px 7px;animation:blink 1s steps(2) infinite}
+.t-tlou{background:linear-gradient(180deg,#2c3a2e,#141c16);color:#e8e2cf;font-family:var(--vt)}
+.t-tlou h3{font-family:var(--serif);color:#f2e6b8;letter-spacing:.04em;text-shadow:2px 2px 0 #000}
+.t-tlou .leaf{position:absolute;right:18px;bottom:6px;font-size:58px;color:#7aa86a;text-shadow:3px 3px 0 #0a100b;transform:rotate(-12deg)}
+.t-tlou .spores{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.t-tlou .spores i{position:absolute;bottom:-6px;width:4px;height:4px;background:#e8f0a8;box-shadow:0 0 6px #e8f0a8;animation:spore 7s linear infinite;opacity:.8}
+.t-tlou .spores i:nth-child(1){left:12%}.t-tlou .spores i:nth-child(2){left:24%;animation-delay:-1.5s}.t-tlou .spores i:nth-child(3){left:37%;animation-delay:-3s}
+.t-tlou .spores i:nth-child(4){left:49%;animation-delay:-4.5s}.t-tlou .spores i:nth-child(5){left:61%;animation-delay:-6s}.t-tlou .spores i:nth-child(6){left:73%;animation-delay:-2.2s}
+.t-tlou .spores i:nth-child(7){left:85%;animation-delay:-5.1s}.t-tlou .spores i:nth-child(8){left:92%;animation-delay:-.7s}.t-tlou .spores i:nth-child(9){left:5%;animation-delay:-3.8s}
+@keyframes spore{from{transform:translate(0,0)}50%{transform:translate(10px,-130px)}to{transform:translate(-6px,-260px);opacity:0}}
 </style>
 </head>
 <body class="intro">
@@ -551,7 +578,7 @@ body.reading #srccode,body.intro #srccode{opacity:0;pointer-events:none}
   <div id="scroll" aria-hidden="true">
     <div class="rod"></div>
     <div class="sc-paper">
-      <div class="sc-head"><canvas class="sc-ico" id="scIco" width="15" height="13"></canvas><div class="sc-tt"><div class="sc-place" id="scPlace"></div><h1 id="scTitle"></h1></div><button id="scClose">✕ <span>VOLTAR AO MAPA</span></button></div>
+      <div class="sc-head"><button id="scBack" hidden title="Voltar">‹ <span>VOLTAR</span></button><canvas class="sc-ico" id="scIco" width="15" height="13"></canvas><div class="sc-tt"><div class="sc-place" id="scPlace"></div><h1 id="scTitle"></h1></div><button id="scClose">✕ <span>VOLTAR AO MAPA</span></button></div>
       <div class="sc-body" id="scBody">
         <section id="screen">
             <div class="scr" id="s-batalha">
@@ -761,7 +788,10 @@ const FAVS = [
   {id:'ff9',  t:'Final Fantasy IX',      re:/final fantasy\s*(ix|9)\b/i},
   {id:'ff7',  t:'Final Fantasy VII',     re:/final fantasy\s*(vii|7)\b/i},
   {id:'tales',t:'Tales of Graces f',     re:/tales of graces/i},
-  {id:'dmc',  t:'Devil May Cry 3',       re:/devil may cry\s*3/i}
+  {id:'dmc',  t:'Devil May Cry 3',       re:/devil may cry\s*3/i},
+  {id:'lod',  t:'The Legend of Dragoon',  re:/legend of dragoon/i},
+  {id:'dino', t:'Dino Crisis 2',          re:/^dino crisis 2\b(?!.*demo)/i},
+  {id:'tlou', t:'The Last of Us Part II', re:/last of us\s*(part\s*)?(ii|2)\b/i}
 ];
 
 let AC = null, muted = false;
@@ -1116,13 +1146,56 @@ function showScreen(s){
   if (s === 'status') animateBars();
   if (s === 'cartas') renderCards();
 }
+const navStack = [];
+let histDepth = 0, histSkip = false;
+const backBtn = document.getElementById('scBack');
+function snapshot(){
+  return {s: curScreen, top: scBody.scrollTop, f: curScreen === 'cartas' ? {q: cf.q, y: cf.y, p: cf.p, s: cf.s, chips: [...cf.chips]} : null};
+}
+function syncBack(){
+  const prev = navStack[navStack.length - 1];
+  backBtn.hidden = !prev;
+  if (prev) backBtn.title = 'Voltar para ' + PLACE[prev.s].name;
+}
+function pushHist(){ try { history.pushState({gaara: histDepth + 1}, ''); histDepth++; } catch (e) {} }
+function swapTo(s, after){
+  World.placeHero(s);
+  if (s === 'batalha') encounter(() => { showScreen(s); after && after(); });
+  else { blip(); scBody.classList.add('swap'); setTimeout(() => { showScreen(s); after && after(); scBody.classList.remove('swap'); }, 160); }
+}
+function doBack(){
+  const prev = navStack.pop(); if (!prev) return;
+  if (prev.f) { cf.q = prev.f.q; cf.y = prev.f.y; cf.p = prev.f.p; cf.s = prev.f.s; cf.chips = new Set(prev.f.chips); syncFilters(); }
+  swapTo(prev.s, () => { requestAnimationFrame(() => { scBody.style.scrollBehavior = 'auto'; scBody.scrollTop = prev.top; scBody.style.scrollBehavior = ''; }); });
+  syncBack();
+}
+function goBack(){
+  if (!navStack.length) return;
+  if (histDepth > 0) history.back(); else doBack();
+}
+backBtn.onclick = e => { e.stopPropagation(); goBack(); };
+addEventListener('popstate', () => {
+  if (histSkip) { histSkip = false; return; }
+  if (!document.body.classList.contains('reading')) { histDepth = 0; return; }
+  histDepth = Math.max(0, histDepth - 1);
+  if (navStack.length) doBack(); else closeScroll(true);
+});
+document.addEventListener('keydown', e => {
+  if (!document.body.classList.contains('reading') || modal.classList.contains('on')) return;
+  const typing = /INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName);
+  if ((e.altKey && e.key === 'ArrowLeft') || (e.key === 'Backspace' && !typing)) { e.preventDefault(); goBack(); }
+});
 function openScroll(s){
+  navStack.length = 0; syncBack(); pushHist();
   showScreen(s); ok();
   document.body.classList.add('reading');
   scrollEl.classList.remove('closing'); scrollEl.classList.add('open'); scrollEl.setAttribute('aria-hidden', 'false');
 }
-function closeScroll(){
+function closeScroll(fromHistory){
   if (!curScreen) return; blip();
+  navStack.length = 0; syncBack();
+  if (!fromHistory && histDepth > 0) { histSkip = true; try { history.go(-histDepth); } catch (e) { histSkip = false; } }
+  histDepth = 0;
   scrollEl.classList.add('closing');
   setTimeout(() => {
     scrollEl.classList.remove('open', 'closing'); scrollEl.setAttribute('aria-hidden', 'true');
@@ -1133,9 +1206,9 @@ function closeScroll(){
 function go(s){
   if (document.body.classList.contains('intro') || !PLACE[s] || curScreen === s) return;
   if (curScreen) {
-    World.placeHero(s);
-    if (s === 'batalha') encounter(() => showScreen(s));
-    else { blip(); scBody.classList.add('swap'); setTimeout(() => { showScreen(s); scBody.classList.remove('swap'); }, 160); }
+    navStack.push(snapshot()); if (navStack.length > 30) navStack.shift();
+    syncBack(); pushHist();
+    swapTo(s);
     return;
   }
   if (navBusy) return; navBusy = true;
@@ -1309,7 +1382,10 @@ const DECOR = {
   ff9:   () => ff9svg,
   ff7:   () => '<div class="materia"><i></i><i></i><i></i><i></i><i></i></div>',
   tales: () => '<div class="flower">✿</div>',
-  dmc:   () => '<div class="sss">SSS</div>'
+  dmc:   () => '<div class="sss">SSS</div>',
+  lod:   () => '<div class="gem"><i></i></div>',
+  dino:  () => '<div class="claw"><i></i><i></i><i></i></div><div class="danger">DANGER</div>',
+  tlou:  () => '<div class="spores">' + '<i></i>'.repeat(9) + '</div><div class="leaf">❦</div>'
 };
 function renderFavs(){
 document.getElementById('favs').innerHTML = FAVS.map(f => {
@@ -1361,7 +1437,7 @@ const TITLES = [
   ['📺','Investigador da Meia-Noite','Persona 3, 4 e 5 zerados',distinct(/persona\s*([345])/i),3],
   ['🎮','Família PlayStation','zerou em PS1, PS2, PS3, PS4, PS5 e PSP',hasPlat(['PS1','PS2','PS3','PS4','PS5','PSP']),6],
   ['🌍','Volta ao Mundo Nintendo','zerou em NES, SNES, N64, GameCube, Wii, Wii U, Switch, GBA e DS',hasPlat(['NES','SNES','N64','GameCube','Wii','Wii U','Switch','GBA','DS']),9],
-  ['❤','Panteão Completo','todos os 8 favoritos zerados no canal',favDone,FAVS.length],
+  ['❤','Panteão Completo',`todos os ${FAVS.length} favoritos zerados no canal`,favDone,FAVS.length],
   ['⏱','Speedrunner','speedrun com PB registrado',G.filter(g => /speedrun/i.test(g.extra)).length,1],
   ['🔦','Seguidor da Luzinha','Zerou Marvel\'s Wolverine seguindo a luz até o fim. Contra a vontade.',fr(/marvel'?s wolverine/i),1],
   ['✿','Contrato de Amizade','zerar Tales of Graces f no canal',fr(/tales of graces/i),1]
